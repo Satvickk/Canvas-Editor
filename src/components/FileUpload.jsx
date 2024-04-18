@@ -9,9 +9,10 @@ function FileUpload() {
   const Data = useSelector((state) => state.Data[0]);
   const [selectedFile, setSelectedFile] = useState(null);
 
-  const handleFileChange = (event) => {
+  const handleFileChange = async (event) => {
     const file = event.target.files[0];
     setSelectedFile(file);
+    console.log(file); // Log the file instead of selectedFile
     dispatch(updateData({ ...Data, image: file.name }));
   };
 

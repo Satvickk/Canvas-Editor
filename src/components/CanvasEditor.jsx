@@ -29,7 +29,7 @@ function CanvasEditor() {
 
     // Drawing mask stroke
     const strokeImg = new Image();
-    strokeImg.src = Data.image;
+    strokeImg.src = Data.image ? Data.image : "/not-found.jpg";
     strokeImg.onload = () => {
       ctx.drawImage(strokeImg, 56, 442, 970, 600);
     };
